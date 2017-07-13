@@ -6,11 +6,15 @@ import time
 
 MAX_WAIT = 10
 
+
 class NewVisitorTest(LiveServerTestCase):
+
     def setUp(self):
         self.browser = webdriver.Firefox()
+
     def tearDown(self):
         self.browser.quit()
+
 
     def wait_for_row_in_list_table(self, row_text):
         start_time = time.time()
@@ -24,6 +28,7 @@ class NewVisitorTest(LiveServerTestCase):
                 if time.time() - start_time > MAX_WAIT:
                     raise e
                 time.sleep(0.5)
+
 
     def test_can_start_a_list_and_retrieve_it_later(self):
         # Edith has heard about a cool new online to-do app. She goes
@@ -41,6 +46,7 @@ class NewVisitorTest(LiveServerTestCase):
             inputbox.get_attribute('placeholder'),
             'Enter a to-do item'
         )
+
         # She types "Buy peacock feathers" into a text box (Edith's hobby
         # is tying fly-fishing lures)
         inputbox.send_keys('Buy peacock feathers')
@@ -65,5 +71,8 @@ class NewVisitorTest(LiveServerTestCase):
         # that the site has generated a unique URL for her -- there is some
         # explanatory text to that effect.
         self.fail('Finish the test!')
+
         # She visits that URL - her to-do list is still there.
+
         # Satisfied, she goes back to sleep
+
