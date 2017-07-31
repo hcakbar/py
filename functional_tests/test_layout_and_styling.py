@@ -13,7 +13,7 @@ class LayoutAndStylingTest(FunctionalTest):
         inputbox = self.get_item_input_box()
         self.assertAlmostEqual(
             inputbox.location['x'] + inputbox.size['width'] / 2,
-            506.5,
+            512,
             delta=5
         )
 
@@ -26,7 +26,7 @@ class LayoutAndStylingTest(FunctionalTest):
         inputbox = self.get_item_input_box()
         self.assertAlmostEqual(
             inputbox.location['x'] + inputbox.size['width'] / 2,
-            506.5,
+            512,
             delta=5
         )
 
